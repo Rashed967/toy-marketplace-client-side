@@ -7,7 +7,7 @@ import image13 from '../../assets/image13.jpg';
 import image14 from '../../assets/image14.jpg';
 const Gallery = () => {
     const images = [image7, image14, image13, image4, image12, image6]
-     console.log(images)
+     
     return (
         <div>
             <h3 className='text-center text-3xl font-semibold mb-4 text-yellow-400 underline'>Gallery section </h3>
