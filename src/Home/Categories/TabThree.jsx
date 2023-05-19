@@ -5,7 +5,7 @@ const TabThree = ({game}) => {
     return (
         <div>
             <div className="card w-96 bg-primary text-white shadow-xl">
-  <figure><img src={picture} alt="Shoes" /></figure>
+  <figure><img className="h-80" src={picture} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
     <p>Price : ${price}</p>
