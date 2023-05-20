@@ -11,7 +11,7 @@ const TabTwo = ({game}) => {
     <p>Price : ${price}</p>
     <p>Rating : {rating}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-accent">Buy Now</button>
+      <button className="btn btn-accent">View Details</button>
     </div>
   </div>
 </div>
