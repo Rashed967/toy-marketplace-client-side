@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TabTwo = ({game}) => {
     const {_id, picture, name, price, rating} = game
@@ -11,7 +12,7 @@ const TabTwo = ({game}) => {
     <p>Price : ${price}</p>
     <p>Rating : {rating}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-accent">View Details</button>
+    <Link to={`/toyDetails/${_id}`} className="btn btn-accent">View Details</Link>
     </div>
   </div>
 </div>

@@ -9,7 +9,7 @@ const Categories = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/gamesByCategory`)
+        fetch(`http://localhost:5000/gamesByCategory?subcategory=Simulation`)
         .then(res => res.json())
         .then(data => {
             setGames(data)
@@ -35,22 +35,13 @@ const Categories = () => {
             <div className='mt-7 mb-11'>
             <Tabs>
     <TabList className="flex justify-center gap-x-10 mb-10">
-      <Tab onClick={() => tabOneHandler("")} className="tab tab-bordered">All</Tab>
+
       <Tab onClick={() => tabOneHandler("Simulation")} className="tab tab-bordered">Simulation</Tab>
       <Tab onClick={() => tabOneHandler("Racing")} className="tab tab-bordered">Racing</Tab>
       <Tab onClick={() => tabOneHandler("Sports")} className="tab tab-bordered">Sports</Tab>
     </TabList>
 
-    <TabPanel>
-     <div className='grid md:grid-cols-3 gap-6'>
-     {
-        games.map(game => <TabOne
-        key={game._id}
-        game={game}
-        ></TabOne>)
-      }
-     </div>
-    </TabPanel>
+
     <TabPanel>
      <div className='grid md:grid-cols-3 gap-6'>
      {

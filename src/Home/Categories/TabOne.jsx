@@ -1,7 +1,9 @@
+import { Link, useNavigate } from "react-router-dom";
 
 
 const TabOne = ({game}) => {
    const {_id, picture, name, price, rating} = game
+   const navigate = useNavigate()
     
     return (
         <div>
@@ -12,7 +14,7 @@ const TabOne = ({game}) => {
     <p>Price : ${price}</p>
     <p>Rating : {rating}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-accent">View Details</button>
+      <Link to={`/toyDetails/${_id}`} className="btn btn-accent">View Details</Link>
     </div>
   </div>
 </div>

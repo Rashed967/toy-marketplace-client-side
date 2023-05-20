@@ -8,6 +8,9 @@ import Register from "../page/Register/Register";
 import PrivetRoute from "./PrivetRoute";
 import MyToyes from "../page/MyToyes/MyToyes";
 import Blog from "../page/Blog/Blog";
+import ToyDetails from "../Home/Categories/ToyDetails";
+import AddAToy from "../page/AddAToy/AddAToy";
+import ErrorPage from "../page/ErrorPage/ErrorPage";
 
 
   const router = createBrowserRouter([
@@ -32,11 +35,25 @@ import Blog from "../page/Blog/Blog";
           element : <MyToyes></MyToyes>
         },
         {
+          path : "/addAToy",
+          element : <AddAToy></AddAToy>
+        },
+        {
           path : "/blog",
           element : <Blog></Blog>
+        },
+        {
+          path : "/toyDetails/:id",
+          element : <ToyDetails></ToyDetails>,
+          loader : ({params}) => fetch(`http://localhost:5000/games/${params.id}`)
         }
       ]
+      
     },
+    {
+      path : "*",
+      element : <ErrorPage></ErrorPage>
+    }
   ]);
 
   export default router

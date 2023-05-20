@@ -5,7 +5,9 @@ import { AuthContex } from '../../providers/AuthProviders';
 
 
 const NavBar = () => {
-  const {user}= useContext(AuthContex)
+  const {user, logout}= useContext(AuthContex)
+
+
   
     return (
         <div className="navbar bg-base-100">
@@ -18,8 +20,8 @@ const NavBar = () => {
         <li><Link>Home</Link></li>
         <li><Link>All Toyes</Link></li>
         <li><Link to="/myToyes">My Toyes</Link></li>
-        <li><Link>Add A Toy</Link></li>
-        <li><Link>Blogs</Link></li>
+        <li><Link to="addAToy">Add A Toy</Link></li>
+        <li><Link to="/blog">Blogs</Link></li>
       </ul>
     </div>
   </div>
@@ -28,7 +30,9 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
 
-    <Link>login</Link>
+    {
+      user ? <Link >logout</Link> : <Link>login</Link>
+    }
   </div>
 </div>
     );
