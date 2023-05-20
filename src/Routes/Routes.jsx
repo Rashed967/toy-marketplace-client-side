@@ -7,6 +7,7 @@ import Login from "../page/Login/Login";
 import Register from "../page/Register/Register";
 import PrivetRoute from "./PrivetRoute";
 import MyToyes from "../page/MyToyes/MyToyes";
+import Blog from "../page/Blog/Blog";
 
 
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ import MyToyes from "../page/MyToyes/MyToyes";
         {
           path : "/myToyes",
           element : <MyToyes></MyToyes>
+        },
+        {
+          path : "/blog",
+          element : <Blog></Blog>
         }
       ]
     },
