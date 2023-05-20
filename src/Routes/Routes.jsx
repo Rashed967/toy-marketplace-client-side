@@ -28,7 +28,7 @@ import MyToyes from "../page/MyToyes/MyToyes";
         },
         {
           path : "/myToyes",
-          element : <PrivetRoute><MyToyes></MyToyes></PrivetRoute>
+          element : <MyToyes></MyToyes>
         }
       ]
     },

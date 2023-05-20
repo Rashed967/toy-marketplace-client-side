@@ -28,9 +28,7 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
 
-    {
-      user && <image></image>
-    }
+    <Link>login</Link>
   </div>
 </div>
     );
