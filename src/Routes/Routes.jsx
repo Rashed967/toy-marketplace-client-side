@@ -11,6 +11,7 @@ import Blog from "../page/Blog/Blog";
 import ToyDetails from "../Home/Categories/ToyDetails";
 import AddAToy from "../page/AddAToy/AddAToy";
 import ErrorPage from "../page/ErrorPage/ErrorPage";
+import AllToyes from "../page/AllToyes/AllToyes";
 
 
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ import ErrorPage from "../page/ErrorPage/ErrorPage";
         {
           path : "/register",
           element : <Register></Register>
+        },
+        {
+          path : "allToyes",
+          element : <AllToyes></AllToyes>
         },
         {
           path : "/myToyes",

@@ -18,7 +18,7 @@ const NavBar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li><Link>Home</Link></li>
-        <li><Link>All Toyes</Link></li>
+        <li><Link to="/allToyes">All Toyes</Link></li>
         <li><Link to="/myToyes">My Toyes</Link></li>
         <li><Link to="addAToy">Add A Toy</Link></li>
         <li><Link to="/blog">Blogs</Link></li>

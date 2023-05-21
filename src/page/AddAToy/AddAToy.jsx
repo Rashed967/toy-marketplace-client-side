@@ -8,6 +8,7 @@ const AddAToy = () => {
         const name = form.name.value;
         const pictureUrl = form.picURL.value;
         const sellerName = form.sellerName.value;
+        const sellerEmail = form.email.value;
         const subCategory = form.subCategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
@@ -17,6 +18,7 @@ const AddAToy = () => {
             name,
             pictureUrl,
             sellerName,
+            sellerEmail,
             subCategory,
             price,
             rating,
@@ -32,9 +34,9 @@ const AddAToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.insertedId > 0){
+            if(data.insertedId > 1){
                 console.log(data)
-                Swal.fire({
+               return Swal.fire({
                     icon: 'success',
                     title: 'Toy added successfully',
                     showConfirmButton: false,
@@ -71,6 +73,12 @@ const AddAToy = () => {
             <span className="label-text">Seller Name</span>
           </label>
           <input type="text" name='sellerName' required placeholder="Seller Name" className="input input-bordered" />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Seller Email</span>
+          </label>
+          <input type="email" name='email' required placeholder="Seller Name" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
