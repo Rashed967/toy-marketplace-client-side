@@ -1,5 +1,7 @@
+import useTitleHook from "../../CustomHook/TitleHook/TitleHook";
 
 const Blog = () => {
+    useTitleHook("Blog")
     return (
         <>
           <h2 className="bg-warning text-white underline rounded-sm font-semibold text-3xl text-center py-12 ">Blog page</h2>  

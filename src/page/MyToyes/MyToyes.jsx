@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import MyToyesCard from "../../components/AllToyCard/MyToyesCard/MyToyesCard";
+import useTitleHook from "../../CustomHook/TitleHook/TitleHook";
 
 const MyToyes = () => {
+    useTitleHook("My toyes")
     const [myToyes, setMyToyes] = useState([])
 
     useEffect(() => {
@@ -10,10 +12,10 @@ const MyToyes = () => {
         .then(data => {
             setMyToyes(data)
         })
-    },[])
+    },[myToyes])
     return (
         <div className="mt-14">   
-            <table className="table w-full ">
+            <table className="table w-full my-12">
     {/* head */}
     <thead>
       <tr>

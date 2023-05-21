@@ -37,11 +37,11 @@ import AllToyes from "../page/AllToyes/AllToyes";
         },
         {
           path : "/myToyes",
-          element : <MyToyes></MyToyes>
+          element : <PrivetRoute><MyToyes></MyToyes></PrivetRoute>
         },
         {
           path : "/addAToy",
-          element : <AddAToy></AddAToy>
+          element : <PrivetRoute><AddAToy></AddAToy></PrivetRoute>
         },
         {
           path : "/blog",

@@ -2,12 +2,19 @@ import {Link} from 'react-router-dom'
 import logo from '../../../src/assets/logo.png'
 import { useContext } from 'react';
 import { AuthContex } from '../../providers/AuthProviders';
+import { CgProfile } from "react-icons/cg";
 
 
 const NavBar = () => {
   const {user, logout}= useContext(AuthContex)
+  const title = document.title;
+  console.log(title)
 
+  const logOutHandler = () => {
+    logout()
+  }
 
+  // console.log(user)
   
     return (
         <div className="navbar bg-base-100">
@@ -31,7 +38,10 @@ const NavBar = () => {
   <div className="navbar-end">
 
     {
-      user ? <Link >logout</Link> : <Link>login</Link>
+      user ? <>
+      <div className={`tooltip htooltip-open tooltip-left`} data-tip="hello">
+</div>
+       <CgProfile className='mx-3 text-2xl' /> <Link onClick={logOutHandler} >logout</Link></> : <Link to="/login">login</Link>
     }
   </div>
 </div>

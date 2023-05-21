@@ -1,7 +1,8 @@
 import Swal from 'sweetalert2'
+import useTitleHook from '../../CustomHook/TitleHook/TitleHook';
 
 const AddAToy = () => {
-
+    useTitleHook("Add a toy")
     const AddToyHandler = event => {
         event.preventDefault()
         const form = event.target;
@@ -34,11 +35,10 @@ const AddAToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.insertedId > 1){
-                console.log(data)
-               return Swal.fire({
+            if(data.insertedId > 0){
+                Swal.fire({
                     icon: 'success',
-                    title: 'Toy added successfully',
+                    title: 'Your work has been saved',
                     showConfirmButton: false,
                     timer: 1500
                   })

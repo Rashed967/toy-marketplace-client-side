@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitleHook from '../../CustomHook/TitleHook/TitleHook';
 
 const ErrorPage = () => {
+    useTitleHook('404')
     return (
       
 <section>

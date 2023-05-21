@@ -43,7 +43,7 @@ const Categories = () => {
 
 
     <TabPanel>
-     <div className='grid md:grid-cols-3 gap-6'>
+     <div className='grid justify-center md:grid-cols-2 lg:grid-cols-2 gap-6'>
      {
         games.map(game => <TabOne
         key={game._id}
