@@ -1,7 +1,10 @@
 import Swal from 'sweetalert2'
 import useTitleHook from '../../CustomHook/TitleHook/TitleHook';
+import { useContext } from 'react';
+import { AuthContex } from '../../providers/AuthProviders';
 
 const AddAToy = () => {
+    const {user} = useContext(AuthContex)
     useTitleHook("Add a toy")
     const AddToyHandler = event => {
         event.preventDefault()
@@ -78,7 +81,7 @@ const AddAToy = () => {
           <label className="label">
             <span className="label-text">Seller Email</span>
           </label>
-          <input type="email" name='email' required placeholder="Seller Name" className="input input-bordered" />
+          <input type="email" name='email' defaultValue={user?.email} required placeholder="Seller Name" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">

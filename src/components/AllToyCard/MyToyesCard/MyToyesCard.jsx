@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContex } from '../../../providers/AuthProviders';
 
 const MyToyesCard = ({toy}) => {
+    const {user} = useContext(AuthContex)
     const {name, pictureUrl, price, quantity, rating, sellerName, subCategory, _id} = toy
-    const [confirm, setConfirm] = useState(null)
+
 
     const updateToy = (event, ) => {
         event.preventDefault()

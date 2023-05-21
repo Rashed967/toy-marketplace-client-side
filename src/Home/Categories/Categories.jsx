@@ -31,7 +31,7 @@ const Categories = () => {
 
     return (
         <div>
-            <h1 className='text-center text-3xl text-yellow-400 font-medium mt-5 underline'>Shop By Category</h1>
+            <h1 data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" className='text-center text-3xl text-yellow-400 font-medium mt-5 underline'>Shop By Category</h1>
             <div className='mt-7 mb-11'>
             <Tabs>
     <TabList className="flex justify-center gap-x-10 mb-10">

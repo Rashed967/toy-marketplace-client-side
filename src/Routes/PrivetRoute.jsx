@@ -11,14 +11,12 @@ const PrivetRoute = ({children}) => {
         <p className='text-3xl font-semibold text-center'>Loading</p>
     }
 
-    if(user?.email){
+    if(user){
         return children
     }
 
-    else{
         return <Navigate to="/login" state={{from : location}}></Navigate>
-    }
-    
+
     
 };
 
