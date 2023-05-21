@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 
 const AddAToy = () => {
 
@@ -13,7 +13,37 @@ const AddAToy = () => {
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
-        
+        const newToy = {
+            name,
+            pictureUrl,
+            sellerName,
+            subCategory,
+            price,
+            rating,
+            quantity,
+            details
+        }
+        fetch('http://localhost:5000/addAToy',{
+            method : "POST",
+            headers : {
+                'content-type' : "application/json"
+            },
+            body : JSON.stringify(newToy)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId > 0){
+                console.log(data)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Toy added successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+            
+        })
+        form.reset()
 
     }
     return (
@@ -28,53 +58,53 @@ const AddAToy = () => {
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input type="text" name="name" placeholder="Name" className="input input-bordered" />
+          <input type="text" name="name" required placeholder="Name" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Picture URL</span>
           </label>
-          <input type="text" name='picURL' placeholder="Picture URL" className="input input-bordered" />
+          <input type="text" name='picURL' required placeholder="Picture URL" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Seller Name</span>
           </label>
-          <input type="text" name='sellerName' placeholder="Seller Name" className="input input-bordered" />
+          <input type="text" name='sellerName' required placeholder="Seller Name" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Sub Category</span>
           </label>
-          <input type="text" name='subCategory' placeholder="Sub Category" className="input input-bordered" />
+          <input type="text" name='subCategory' required placeholder="Sub Category" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Price</span>
           </label>
-          <input type="text" name='price' placeholder="Price" className="input input-bordered" />
+          <input type="text" name='price' required placeholder="Price" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Rating</span>
           </label>
-          <input type="text" name='rating' placeholder="Rating" className="input input-bordered" />
+          <input type="text" name='rating' required placeholder="Rating" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Available Quantity</span>
           </label>
-          <input type="text" name='quantity' placeholder="Available Quantity" className="input input-bordered" />
+          <input type="text" name='quantity' required placeholder="Available Quantity" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Details</span>
           </label>
-          <input type="text" name='details' placeholder="Details" className="input input-bordered" />
+          <input type="text" name='details' required placeholder="Details" className="input input-bordered" />
         </div>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary">Add the toy</button>
         </div>
       </form>
     </div>
