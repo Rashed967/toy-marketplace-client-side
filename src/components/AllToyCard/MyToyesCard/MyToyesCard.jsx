@@ -13,7 +13,7 @@ const MyToyesCard = ({toy}) => {
         const price = form.price.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
-        fetch(`http://localhost:5000/allToyes/${_id}`, {
+        fetch(`https://toy-joy-server-six.vercel.app/allToyes/${_id}`, {
             method : "PATCH",
             headers : {
                 'content-type' : 'application/json'
@@ -45,7 +45,7 @@ const MyToyesCard = ({toy}) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/allToyes/${id}`, {
+                fetch(`https://toy-joy-server-six.vercel.app/allToyes/${id}`, {
                     method : "DELETE"
                 })
                 .then(res => res.json())

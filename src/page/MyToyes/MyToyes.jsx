@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MyToyesCard from "../../components/AllToyCard/MyToyesCard/MyToyesCard";
 import useTitleHook from "../../CustomHook/TitleHook/TitleHook";
+import { AuthContex } from "../../providers/AuthProviders";
 
 const MyToyes = () => {
     useTitleHook("My toyes")
     const [myToyes, setMyToyes] = useState([])
+    const {user} = useContext(AuthContex)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToyes?email=Rashed@fdf.com`)
+        fetch(`https://toy-joy-server-six.vercel.app/myToyes?email=${user.email}`)
         .then(res =>  res.json())
         .then(data => {
             setMyToyes(data)
         })
-    },[myToyes])
+    },[myToyes, user.email])
     return (
         <div className="mt-14">   
             <table className="table w-full my-12">

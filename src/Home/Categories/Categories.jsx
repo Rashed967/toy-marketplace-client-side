@@ -9,7 +9,7 @@ const Categories = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/gamesByCategory?subcategory=Simulation`)
+        fetch(`https://toy-joy-server-six.vercel.app/gamesByCategory?subcategory=Simulation`)
         .then(res => res.json())
         .then(data => {
             setGames(data)
@@ -20,7 +20,7 @@ const Categories = () => {
     }, [])
 
     const tabOneHandler = (subcategory) => {
-        fetch(`http://localhost:5000/gamesByCategory?subcategory=${subcategory}`)
+        fetch(`https://toy-joy-server-six.vercel.app/gamesByCategory?subcategory=${subcategory}`)
         .then(res => res.json())
         .then(data => {
             setGames(data)

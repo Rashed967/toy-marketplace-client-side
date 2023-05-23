@@ -7,7 +7,7 @@ const AllToyes = () => {
     useTitleHook('All toyes')
     const [allToyes, setAllToyes] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/allToyes')
+        fetch('https://toy-joy-server-six.vercel.app/allToyes')
         .then(res => res.json())
         .then(data => {
             setAllToyes(data)

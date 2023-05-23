@@ -51,12 +51,12 @@ import ViewDetails from "../components/AllToyCard/ViewDetails";
         {
           path : "/toyDetails/:id",
           element : <ToyDetails></ToyDetails>,
-          loader : ({params}) => fetch(`http://localhost:5000/games/${params.id}`)
+          loader : ({params}) => fetch(`https://toy-joy-server-six.vercel.app/games/${params.id}`)
         },
         {
           path : "/viewDetails/:id",
           element : <PrivetRoute><ViewDetails></ViewDetails></PrivetRoute>,
-          loader : ({params}) => fetch(`http://localhost:5000/allToyes/${params.id}`)
+          loader : ({params}) => fetch(`https://toy-joy-server-six.vercel.app/allToyes/${params.id}`)
         }
       ]
       
